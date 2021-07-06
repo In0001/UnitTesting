@@ -7,13 +7,19 @@ public class CalculatorTest {
     Calculator calculator = new Calculator();
 
     @Test
-    void sum() {
+    void sum1() {
         result = calculator.sum(7, 3);
         assertEquals(10, result);
+    }
 
+    @Test
+    void sum2() {
         result = calculator.sum(-4, 5);
         assertEquals(1, result);
+    }
 
+    @Test
+    void sum3() {
         result = calculator.sum(4.1, 5.9);
         assertEquals(10, result);
     }
@@ -31,9 +37,18 @@ public class CalculatorTest {
     }
 
     @Test
-    void div() {
+    void div1() {
         result = calculator.div(21, 3);
         assertEquals(7, result);
     }
 
+    @Test
+    void div2() {
+        try {
+            result = calculator.div(21, 0);
+            fail("Ожидалось NullPointerException");
+        } catch (NullPointerException e) {
+            System.out.println("Делить на ноль нельзя");
+        }
+    }
 }
