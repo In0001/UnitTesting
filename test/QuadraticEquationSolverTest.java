@@ -11,13 +11,9 @@ class QuadraticEquationSolverTest {
     List<Double> result2 = new ArrayList<>();
 
     @Test
-    void result1() throws Exception {
-        try {
-            result1 = qes.result(0, 2, 3);
-            fail("Ожидалось Error");
-        } catch (Error e) {
-            System.out.println("Это не квадратное уравнение");
-        }
+    void result1() {
+        assertThrows(Error.class, () -> {
+            qes.result(0, 2, 3); });
     }
 
     @Test

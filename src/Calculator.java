@@ -13,7 +13,7 @@ public class Calculator {
 
     public double div(double number1, double number2) {
         if (number2 == 0)
-            throw new NullPointerException("Делить на ноль нельзя");
+            throw new ArithmeticException("Делить на ноль нельзя");
         return number1 / number2;
     }
 }

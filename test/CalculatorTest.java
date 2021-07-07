@@ -44,11 +44,7 @@ public class CalculatorTest {
 
     @Test
     void div2() {
-        try {
-            result = calculator.div(21, 0);
-            fail("Ожидалось NullPointerException");
-        } catch (NullPointerException e) {
-            System.out.println("Делить на ноль нельзя");
-        }
+        assertThrows(ArithmeticException.class, () -> {
+            calculator.div(21, 0); });
     }
 }
